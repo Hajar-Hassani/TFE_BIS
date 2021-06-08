@@ -1,0 +1,22 @@
+// ./scss/framework/modules/_btn.scss
+// MODULE DES BOUTONS
+
+.btn{
+  border: 2px solid $couleur2F;
+  border-radius: 7px;
+  box-shadow: 1px 14px 13px 0 rgba(0, 0, 0, 0.2),
+              -5px 0 23px 0 #DAD1CB;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+
+  @media screen and (min-width: 0) and (max-width: 767px) {
+    font-size: 10px;
+  }
+}
+
+.btn:hover{
+  background-color: $couleur4F;
+  color: $couleurN1;
+}

@@ -1,0 +1,41 @@
+// ./scss/framework/modules/_utilistaires.scss
+// Modules des utilitaires
+.utilitaire_visibilite__none {
+  display: none;
+}
+
+  @media screen and (min-width:0) {
+    .d_xsd__none {
+      display: none;
+    }
+    .d_md__none {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width:576px) {
+    .d_sd__none {
+      display: none;
+    }
+    .d_xsd__none {
+      display: unset;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .d_md__none {
+      display: unset;
+    }
+    .d_ld__none {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 1023px) {
+    .d_ld__none {
+      display: unset;
+    }
+    .d_xld__none {
+      display: none;
+    }
+  }

@@ -1,0 +1,11 @@
+// ./scss/framework/modules/_reset.scss
+// Modules des reset
+
+* {
+  box-sizing: border-box;    // pour que quand je met 100% c'est padding compris
+  margin: 0;
+}
+
+figure {
+  margin: 0;
+}

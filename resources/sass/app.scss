@@ -1,0 +1,431 @@
+// Fonts
+//  @import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+//  @import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+/*
+FICHIER DE SURCHARGE
+*/
+@import 'framework/variables';
+@import 'framework/framework';
+/* ---------------------------------------------------
+SPECIFICATIONS GENERALES - Valeurs par défaut
+---------------------------------------------------
+*/
+
+body {
+  background-color:$couleurN1;
+  margin: 0;
+  font-family: $texteFont1;
+  color: $couleur1F;
+}
+
+h2,h3,p,a{
+  text-align: center;
+}
+
+h2{
+  text-transform: uppercase;
+  font-family: $texteFont1;
+  font-weight: bolder;
+  font-size: 25px;
+}
+
+h3{
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: lighter;
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  color: $couleur1F;
+  text-decoration: none;
+}
+
+.parallax {
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.bg_opacity{
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* L'opacite se regle ici */
+}
+
+.shadow{
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.18)!important;
+}
+
+body.noScroll {
+  /*width: 100%;
+  height: 100vh;
+  position: fixed;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  */
+  overflow: hidden;
+}
+
+/* ---------------------------------------------------
+   PARAMETRES REUTILISABLE
+ ---------------------------------------------------
+*/
+
+@mixin filter {
+  position: relative;
+  -webkit-filter: contrast(110%) brightness(110%) saturate(130%);
+  filter: contrast(70%) brightness(70%) saturate(70%);
+  &::before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    background: rgba(243, 106, 188, 0.3);
+  }
+}
+
+  /* ---------------------------------------------------
+     OBJETS PARTICULIERS
+   ---------------------------------------------------
+  */
+
+  // ----- HEADER -----
+  // ----- Fond du header -----
+  .header_principal{
+    background-color: $couleurN1;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    margin-top: -5px;
+    @media screen and (min-width: 0) and (max-width: 1023px) {
+      margin-top: -30px;
+    }
+  }
+
+  // ----- Logo -----
+  #logo_principal{
+    margin-top: 8px;
+    padding-top: 10px;
+    img{
+      width: 47%;
+    }
+    @media screen and (min-width: 0) and (max-width: 767.99px){
+      margin: 0 0 10px 35%;
+      //margin-left: 29%;
+      img{
+        width: 48%;
+      }
+    }
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+      margin-left: 35%;
+      padding-top: 0px;
+      img{
+        width: 45%;
+      }
+    }
+  }
+
+  // ----- Fond du contenu du header -----
+  #bg_content_header {
+    background: url('../medias/background_header.png') right no-repeat;
+    height: 849px;
+
+    @media screen and (min-width: 0) and (max-width: 767.99px) {
+      background: url('../medias/background_header_mobile.png') -150px -190px no-repeat;
+      margin-top: 20px;
+      height: 550px;
+    }
+  }
+
+  // ----- Contenu -----
+  #contenu_header{
+    padding-top: 360px;
+    h1{
+      font-family: $texteFont2;
+      font-size: 63px;
+      color: $couleur3F;
+      margin-bottom: 40px;
+    }
+    @media screen and (min-width: 0) and (max-width: 1023px) {
+      padding-top: 300px;
+      padding-left: 30px;
+      h1{
+        font-size: 30px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  #bg_content{
+    @media screen and (min-width: 0) and (max-width: 1023px) {
+      margin-left: -32px;
+      padding: 30px 18px;
+      background-color: rgba(233,197,183,0.6);
+    }
+  }
+
+
+
+  #call_to_action2{
+    border-bottom: 2px solid $couleur2F;
+    margin-left: 20px;
+    padding-bottom: 8px;
+    @media screen and (min-width: 0) and (max-width: 767px) {
+      font-size: 15px;
+    }
+  }
+
+  #call_to_action2:hover{
+    color: $couleur2F;
+    text-decoration: none;
+  }
+
+  // ----- Contenu page réalisation -----
+  #bg_header_patisserie{
+    background: url('../medias/bg_realisation_2.png') center no-repeat;
+    height: 42vh;
+  }
+
+  // ----- SECTION A PROPOS -----
+  #a_propos{
+    margin-top: 85px;
+    height: 95vh;
+    h2{
+      margin-bottom: 2%;
+    }
+     p{
+      margin-bottom: 2%;
+      font-size: 15px;
+    }
+    figure{
+      text-align: center;
+      margin-top: 3%;
+      img{
+        width: 35%;
+      }
+    }
+
+    #concept{
+      margin-top: 3%;
+      border: 1px solid $menuCouleurTexteActif;
+      padding: 20px;
+      h3{
+        margin-bottom: 4%;
+      }
+      li{
+        h4{
+          color: $couleurN1;
+          font-size: 20px;
+          text-align: center;
+          background-color: $couleur1C;
+          border-radius: 50%;
+          height: 40px;
+          width: 40px;
+          padding-top: 7px;
+          margin-left: 45%;
+          margin-bottom: 20px;
+        }
+        margin-right: 10px;
+      }
+    }
+  }
+
+  // ----- SECTION LES AVIS -----
+  #avis{
+    //background: url('../medias/bg_remerciement.png') 40% 35% no-repeat;
+    background-size: 1450px;
+    height: 55vh;
+    article{
+      margin-top: 30%;
+      margin-right: 30px;
+      margin-left: 30px;
+      p{
+        font-size: 16px;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        border-bottom: 0.5px solid $couleur2F;
+      }
+      h3{
+        text-transform: uppercase;
+        font-weight: normal;
+        font-size: 13px;
+      }
+    }
+  }
+
+  // ----- SECTION MES PATISSERIES -----
+  //LES CATEGORIES
+  .filter{
+    padding: 20px 0 25px 0;
+    margin-bottom: 60px;
+    li{
+      text-align: center;
+      //background-color: $couleur4F;
+      margin: 0 15px ;
+      //margin-left: 15px;
+      //margin-right: 15px;
+      border-radius: 20px;
+      border: 2px solid $couleur4F;
+      padding: 10px 4px;
+      router-link{
+        color: $couleur1F;
+        font-size: 13px;
+      }
+    }
+    li:hover, li.actif{
+      a{
+        color: $couleurN1;
+        text-decoration: none;
+      }
+      background-color: $menuCouleurTexteActif;
+    }
+  }
+
+  //LA LISTE DES PATISSERIES
+  #patisserie{
+    margin-bottom: 60px;
+    article{
+      margin-left: 10px;
+      margin-bottom: 10px;
+    }
+    .hover{
+      position: relative;
+      //overflow: hidden;
+      figcaption{
+        position: absolute;
+        opacity: 0;
+        background: rgba(0,0,0,.5);
+        color: $couleurN1;
+        width: 100%;
+        height: 99%;
+        h3{
+          padding-top: 40%;
+          text-align: center;
+          font-size: .9em;
+        }
+      }
+      &:hover{
+        figcaption{
+          opacity: 1;
+          top:0;
+        }
+      }
+    }
+  }
+
+  // ----- SECTION DERNIERE PATISSERIE -----
+  #last_patisserie{
+    background: url('../medias/bg_last_realisation.png') 125% 35% no-repeat;
+    margin-top: 65px;
+    height: 80vh;
+    h3{
+      margin-bottom: 5%;
+    }
+    aside{
+      margin-top: 20%;
+      h4{
+        margin-left: 5%;
+        margin-bottom: 8%;
+        font-weight: bold;
+        font-size: 16px;
+      }
+      p{
+        margin-bottom: 10%;
+        font-size: 15px;
+      }
+      a{
+        margin-left: 5%;
+        //box-shadow: none;
+      }
+    }
+  }
+
+  // ----- SECTION CONTACT -----
+  #contact{
+  //background: url('../medias/bg_contact_opacite.png') no-repeat;
+  height: 52vh;
+  padding-top: 60px;
+  h2, p{
+    color: $couleurN1;
+  }
+  h2{
+    margin-top: 3%;
+    margin-bottom: 5%;
+  }
+  p{
+    margin: 0 150px 50px 150px;
+    font-size: 16px;
+  }
+  button{
+    background-color: $couleurN1;
+    margin-left: 42%;
+    //font-size: 14px;
+  }
+  button:hover{
+    background-color: $couleur4F;
+  }
+  }
+  // ----- SECTION FOOTER -----
+  .footer{
+  .logo_footer{
+    margin: 40px 0 25px 0;
+    text-align: center;
+    margin-top: 25px;
+    img{
+      width: 20%;
+    }
+    @media screen and (min-width: 0) and (max-width: 767.99px) {
+      img{
+        width: 35%;
+      }
+    }
+  }
+  .fb{
+    width: 10px;
+    margin-left: 540px;
+    @media screen and (min-width: 0) and (max-width: 767.99px) {
+      margin-left: 0;
+    }
+  }
+  .insta{
+    width: 20px;
+    margin-left: 10px;
+  }
+  address{
+    text-align: center;
+    margin-top: 20px;
+    font-style: normal;
+    li{
+      margin-bottom: 10px;
+      font-size: 13px;
+    }
+  }
+  .telephone_footer{
+    margin-top: 30px;
+    background-color: $couleur2F;
+    text-align: center;
+    padding: 10px;
+    a{
+      color: $couleurN1;
+    }
+  }
+  }

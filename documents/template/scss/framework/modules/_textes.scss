@@ -1,0 +1,50 @@
+// ./scss/framework/modules/_textes.scss
+// MODULES DES TEXTES
+
+
+/* Alignements des textes */
+  .texte_alignement__centre {
+    text-align: center;
+  }
+  .texte_alignement__gauche {
+    text-align: left;
+  }
+  .texte_alignement__droite {
+    text-align: right;
+  }
+  .texte_alignement__justifie {
+    text-align: justify;
+  }
+
+  /* Couleurs des textes */
+    .texte_couleur__1 {
+      color: $couleur1F;
+    }
+    .texte_couleur__2 {
+      color: $couleur3F;
+    }
+    .texte_couleur__n1 {
+      color: $couleurN1;
+    }
+
+  /* Tailles des textes */
+    .texte_taille__grand {
+      font-size: $texteTailleGrand;
+    }
+    .texte_taille__medium {
+      font-size: $texteTailleMedium;
+    }
+    .texte_taille__petit {
+      font-size: $texteTaillePetit;
+    }
+
+  /* Types de textes */
+    .texte_type__majuscules {
+      text-transform: uppercase;
+    }
+    .texte_type__minuscules {
+      text-transform: lowercase;
+    }
+    .texte_type__capitales {
+      text-transform: capitalize;
+    }

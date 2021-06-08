@@ -1,0 +1,145 @@
+// ./scss/framework/modules/_menus.scss
+// MODULE DES MENUS
+
+  .menu_type__horizontal {
+    display: flex;
+    justify-content: $menuJustifyContent;
+    list-style: none;
+    padding-left: 0;
+    margin-top: 6%;
+    font-size: 0.8em;
+  }
+
+  .menu_type__horizontal > li {
+    padding:2px 12px;
+  }
+
+  .menu_type__horizontal > li > a  {
+    color: $menuCouleurTexteNormal;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .menu_type__horizontal > li.actif > a,
+  .menu_type__horizontal > li > a:hover,
+  .menu_type__horizontal > li > a:active {
+    color: $menuCouleurTexteActif;
+    border-bottom: 5px solid $menuCouleurTexteActif;
+    padding-bottom: 39px;
+    @media screen and (min-width: 1024px) and (max-width: 1199px){
+      padding-bottom: 32px;
+    }
+  }
+
+//--------MENU MOBILE--------
+.menuToggle{
+  display: block;
+  position: relative;
+  top: 43px;
+  left: 50px;
+  //width: 5%;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+
+  @media screen and (min-width: 0) and (max-width: 767px) {
+    top: 35px;
+    left: 40px;
+  }
+}
+
+.menuToggle input{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger*/
+  -webkit-touch-callout: none;
+}
+
+.menuToggle span{
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 3px;
+  margin-bottom: 3px;
+  background: $couleur1F;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+.menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+.menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+/*
+ * Transformez toutes les tranches de hamburger en croix.
+ */
+.menuToggle input:checked ~ span{
+  opacity: 1;
+  transform: rotate(45deg) translate(0px, 1px);
+  background: #232323;
+}
+
+/*
+ * Mais cachons celui du milieu.
+ */
+.menuToggle input:checked ~ span:nth-last-child(3){
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+  * Et le dernier devrait aller dans l'autre sens
+  */
+  .menuToggle input:checked ~ span:nth-last-child(2){
+    transform: rotate(-45deg) translate(0, -1px);
+  }
+
+/*
+  * Rendre cet absolu positionné en haut à gauche de l'écran
+  */
+  .mobileMenu{
+    position: absolute;
+    width: 100%;
+    margin: 110px 0 0 -50px;
+    background: $couleurN1;
+    -webkit-font-smoothing: antialiased;
+    /*pour arrêter le scintillement du texte en safari*/
+    transform-origin: 0% 0%;
+    //transform: translate(-100%, 0);
+    transform: translate(0, -10%);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    opacity: 0;
+    li{
+      margin-bottom: 25px;
+    }
+
+    @media screen and (min-width: 0) and (max-width: 767px) {
+      margin-top: 48px;
+      width: 120%;
+    }
+  }
+
+/*
+  *Et glissons-le de la gauche
+  */
+  .menuToggle input:checked ~ ul{
+    transform: none;
+    opacity: 1;
+  }

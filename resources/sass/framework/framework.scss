@@ -1,0 +1,16 @@
+// ./scss/framework/framework.scss
+/*
+    BASE DU FRAMEWORK
+ */
+
+  @import 'variables';
+
+// Chargement des modules nécessaires
+  @import 'modules/reset';
+  @import 'modules/utilitaires';
+  @import 'modules/boites';
+  @import 'modules/textes';
+  @import 'modules/menus';
+  @import 'modules/grilles';
+  @import 'modules/btn';
+  @import 'modules/modales';

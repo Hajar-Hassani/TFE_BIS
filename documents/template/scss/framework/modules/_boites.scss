@@ -1,0 +1,38 @@
+// ./scss/framework/modules/_boites.scss
+// MODULE DES BOITES
+@media screen and (min-width: 1200px){
+  .boite_dimension__fixe_l {
+    width: 100%;
+    max-width: $boiteDimensionFixe;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1199px){
+  .boite_dimension__fixe_m {
+    width: 900px;
+    max-width: $boiteDimensionFixe;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 991px){
+  .boite_dimension__fixe_s {
+    width: 700px;
+    max-width: $boiteDimensionFixe;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 0) and (max-width: 575px){
+  .boite_dimension__fixe_xs {
+    width: auto;
+    max-width: $boiteDimensionFixeS;
+    margin: auto;
+  }
+}
+
+  .boite_bords {
+    border: $boiteBordsCouleur $boiteBordsDimension solid;
+    padding: $boitePadding;
+  }
